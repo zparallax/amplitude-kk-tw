@@ -1,8 +1,6 @@
 #!/system/bin/sh
-#Script originally made by Axetilen. Modified by Sultan (android1234567)
-#Updated for zparallax's AmplitudeKernel (98% of the credit goes to android1234567 and Abinoman887. :)
-#Updated for Amplitude
-#adapted for Galaxy S5 Amplitude Kernel
+#Script originally made by Axetilen. Modified by Sultan and albinoman887 (android1234567)
+#adapted for Galaxy S5 Amplitude
 
 # Configure your options here #
 
@@ -22,8 +20,8 @@
 # GOV=consevative
 # GOV=intelliactive
 # GOV=performance
-GOV=ondemand
-# GOV=interactive
+# GOV=ondemand
+GOV=interactive
 
 # Config CPU frequency
 # Default: 2457600 (2.45Ghtz)
@@ -59,7 +57,7 @@ GPU_MIN=4
 # 
 # Available schedulers: cfq, bfq, fiops, noop, deadline, row, sio, vr, zen, fifo
 # Device default: cfq
-SCHED=row
+SCHED=cfq
 
 
 # Enable Fastcharge
@@ -125,8 +123,4 @@ ENABLE_CORE_THRES="0 290 340 390"
 
 # Config I/O sched
     echo $SCHED > /sys/block/mmcblk0/queue/scheduler
-
-
-# Config Chronic Hotplug
-    echo $ENABLE_CORE_THRES > /sys/devices/system/cpu/cpufreq/chronic_hotplug/enable_core_thresholds
 
